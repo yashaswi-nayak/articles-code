@@ -33,9 +33,9 @@ Now, let's configure your job to use the new image.
 3.  Change the image name to the one you just pushed to Docker Hub. It should look like this:
     ```yaml
     containers:
-    - name: tf-cpu-job
-      image: your-username/tf-test:cpu
-      # ... other configurations
+      - name: tf-cpu-job
+        image: your-username/tf-test:cpu
+        # ... other configurations
     ```
 
 Note: Make sure you have access to docker repo in your K8 cluster. If not you can create a secret with your docker login credentials. Refer this [document](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/) for more.
@@ -66,5 +66,14 @@ You're all set\! Now you can create the Kueue objects and your job in your Kuber
     ```
 
 You can check the status of your job with `kubectl get jobs -n kueue-jobs-ns-a`.
+
+You can also schedule multiple jobs. Run the script, provide the time between new jobs popping up. Here I provide 10 seconds.
+
+```sh
+$ chmod +x ./run_workloads,sh
+$ ./run_workloads.sh jobs-ns-a.yaml 10
+```
+
+This will schedule jobs every 10 seconds.
 
 Happy job running\!
