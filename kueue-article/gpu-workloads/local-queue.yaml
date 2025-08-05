@@ -1,0 +1,7 @@
+apiVersion: kueue.x-k8s.io/v1beta1
+kind: LocalQueue
+metadata:
+  name: local-queue-a-gpu
+  namespace: kueue-jobs-ns-a
+spec:
+  clusterQueue: my-cluster-queue-gpu
