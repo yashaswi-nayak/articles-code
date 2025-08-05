@@ -74,6 +74,6 @@ $ chmod +x ./run_workloads,sh
 $ ./run_workloads.sh jobs-ns-a.yaml 10
 ```
 
-This will schedule jobs every 10 seconds.
+This will schedule jobs every 10 seconds. You can change it as you wish.
 
 Happy job running\!
